@@ -587,10 +587,35 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     padding: 0;
-    padding: 20px	10px; }
+    padding: 20px 10px; }
   .banner-imgg {
     margin-top: 30px;
-    min-height: 140px; }
+    min-height: 140px;
+    min-width: 250px; }
+  section article {
+    max-width: auto;
+    min-width: auto; }
+    section article .featured-post {
+      width: 270px; }
+      section article .featured-post p {
+        margin: 0;
+        padding: 0; }
+      section article .featured-post p:nth-child(2) {
+        padding: 0; }
+      section article .featured-post-imgg {
+        min-width: auto;
+        height: 80px; }
+      section article .featured-post .btns {
+        right: 30px; }
+    section article .posts {
+      max-width: 270px; }
+      section article .posts .post {
+        width: 260px; }
+  section aside {
+    margin-left: 0; }
+    section aside .add2 .a {
+      width: 266px;
+      height: 239px; }
   footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
