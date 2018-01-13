@@ -1,24 +1,31 @@
 $(document).ready(function(){
 if ($(window).width() < 482) {
-	var headerPos,
-		headerHeight = $('header').css('height'),
+	var navPos,
+		navHeight = $('header').outerHeight(true),
 		scrolPos;
-	console.log(true)
-
+	
 	function refreshVar() {
-		headerPos = $('header .header-nav').offset().top; // pflf. rjhlbyfnb
+		navPos = $('header .header-nav').offset().top;
 	}
 
 	refreshVar(); // запускаю щоб видати значиння зразу при запуску
 	$(window).resize(refreshVar); // видає значення при зміні розміру
 
-	$(window).scroll(function(){
+	$('<div class="clone-nav"></div>')
+		.insertBefore('header .header-nav')
+		.css('height', navHeight)
+		.hide();
+
+	$(window).scroll(function(){  // дія виконується тільки при скролі
 		scrolPos = $(window).scrollTop();
-		if (scrolPos >= headerPos) {
-			$('header .header-nav')
-				.addClass('fixed');
+		if (scrolPos >= navPos) {
+			$('header .header-nav').addClass('fixed');
+			$('.clone-nav').show();
 		}
-		else {$('header .header-nav').removeClass('fixed')}
+		else {
+			$('header .header-nav').removeClass('fixed');
+			$('.clone-nav').hide();
+		}
 	});
 }
 });
