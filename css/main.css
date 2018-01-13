@@ -34,6 +34,19 @@ header, section, footer {
   padding-left: 239px;
   padding-right: 243px; }
 
+/*creat sticy navigation for mobile*/
+.fixed {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  background-color: #fff;
+  z-index: 1;
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20px;
+}
+
 header {
   width: 100%;
   display: -webkit-box;
@@ -553,7 +566,14 @@ footer {
 
 @media only screen and (max-width: 710px) {
   header {
-    padding-top: 0; }
+    position: fixed;
+    padding-top: 0;
+    z-index: 10;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5  }
+    header .header-nav {
+      margin-top: 15px;
+    }
     header .logo-wr .logo p {
       font-size: 25px; }
     header .logo-wr .green-cr {
@@ -577,6 +597,8 @@ footer {
 
 @media only screen and (max-width: 480px) {
   header {
+    position: static;
+    border-bottom: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
